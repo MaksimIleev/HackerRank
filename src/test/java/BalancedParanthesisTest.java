@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 
 import java.io.ByteArrayInputStream;
 
-public class BinaryTreeTests {
+public class BalancedParanthesisTest {
 
     @DataProvider
     public Object[][] testData() {
@@ -26,12 +26,11 @@ public class BinaryTreeTests {
     @Test(dataProvider = "testData")
     public void testBalancedMain(String input, boolean isBalanced) {
         System.out.println("'" + input + "'" + " isBalanced?");
-        System.setIn(new ByteArrayInputStream(input.getBytes()));
 
+        System.setIn(new ByteArrayInputStream(input.getBytes()));
         Paranthesis paranthesis = new Paranthesis();
 
         Assert.assertEquals(isBalanced, paranthesis.isBalanced(input));
-
     }
 
 

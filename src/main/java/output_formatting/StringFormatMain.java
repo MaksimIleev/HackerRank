@@ -1,4 +1,4 @@
-package OutputFormatting;
+package output_formatting;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;

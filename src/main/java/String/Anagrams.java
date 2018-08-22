@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Anagrams {
 
-    public static boolean isAnagram(String one, String two) {
+    public boolean isAnagram(String one, String two) {
 
         if(one == null || two == null || one.length() != two.length())
             return false;
@@ -53,7 +53,7 @@ public class Anagrams {
         return true;
     }
 
-    private static void validate(String input) {
+    private void validate(String input) {
         if(!(input != null && input.length() >= 1 && input.length() <= 50)) {
             throw new RuntimeException("Input shold be in range of n >=1 && n <= 50");
         }
@@ -65,18 +65,19 @@ public class Anagrams {
 
     public static void main(String args[]) {
 
+        Anagrams anagrams = new Anagrams();
         Scanner scanner = new Scanner(System.in);
 
         try {
             System.out.println("Enter first word: ");
             String wordOne = scanner.next();
-            validate(wordOne);
+            anagrams.validate(wordOne);
 
             System.out.println("Enter second word: ");
             String wordTwo = scanner.next();
-            validate(wordTwo);
+            anagrams.validate(wordTwo);
 
-            System.out.println(isAnagram(wordOne, wordTwo) ? "Anagrams": "Not Anagrams");
+            System.out.println(anagrams.isAnagram(wordOne, wordTwo) ? "Anagrams": "Not Anagrams");
 
         } finally {
             if(scanner != null)

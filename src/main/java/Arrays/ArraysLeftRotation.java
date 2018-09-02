@@ -12,10 +12,13 @@ public class ArraysLeftRotation {
     * */
     static int[] rotLeft(int[] a, int d) {
          for(int i = 0; i < d; i++) {
+             // save first value
              int tmp = a[0];
+             // shift al values to the left
              for(int j = 0; j < a.length - 1; j++) {
                  a[j] = a[j + 1];
              }
+             // replace last one with saved tmp
              a[a.length -1] = tmp;
          }
         return a;
@@ -24,9 +27,8 @@ public class ArraysLeftRotation {
     private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) throws IOException {
+        
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
-        //BufferedWriter bufferedWriter = new BufferedWriter(
-         //       new FileWriter(System.getProperty("user.dir") + "/src/main/java/String/output"));
 
         String[] nd = scanner.nextLine().split(" ");
 
